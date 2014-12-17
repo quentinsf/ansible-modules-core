@@ -7,6 +7,9 @@ short_description: add a host (and alternatively a group) to the ansible-playboo
 description:
   - Use variables to create new hosts and groups in inventory for use in later plays of the same playbook. 
     Takes variables so you can define the new hosts more fully.
+notes:
+  - Behaviour may be unpredictable if run on multiple hosts simultaneously. 
+    Plays using 'add_host' may also benefit from using 'serial: 1'.
 version_added: "0.9"
 options:
   name:
